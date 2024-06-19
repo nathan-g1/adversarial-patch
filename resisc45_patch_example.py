@@ -148,7 +148,7 @@ model = model.to('cuda')
 model.eval()
 
 # Feed the model with the clean images
-output_clean = model(x_clean)
+output_clean = model(x_clean.to('cuda'))
 clean_predictions = torch.argmax(output_clean, dim=1).cpu().detach().numpy()
 
 # Feed the model with the images corrupted by the patch
