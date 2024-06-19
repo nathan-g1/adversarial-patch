@@ -17,5 +17,3 @@ def target_transforms(y):
     return _image_net_classes[y]
   else:
     return y  # Return the original target if it's outside the range of _image_net_classes
-
-target_transforms = lambda y: _image_net_classes[y]
