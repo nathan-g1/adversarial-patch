@@ -26,7 +26,7 @@ set_all_seed(0)
 patch_id = 1
 
 # dictionary with the ImageNet label names
-with open(os.path.join(os.getcwd(), "assets/imagenet1000_clsidx_to_labels.txt")) as f:
+with open(os.path.join(os.getcwd(), "assets/resisc45_class_to_labels.txt")) as f:
     target_to_classname = eval(f.read())
 
 # Load the patches

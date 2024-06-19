@@ -34,7 +34,7 @@ bott_r_x = 224 // 2 + 50 // 2
 bott_r_y = 224 // 2 + 50 // 2
 
 # dictionary with the ImageNet label names
-with open(os.path.join(os.getcwd(), "assets/imagenet1000_clsidx_to_labels.txt")) as f:
+with open(os.path.join(os.getcwd(), "assets/resisc45_class_to_labels.txt")) as f:
     target_to_classname = eval(f.read())
 
 def show_imagenet_patch(patches, targets):
