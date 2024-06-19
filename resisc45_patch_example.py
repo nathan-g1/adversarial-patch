@@ -47,23 +47,13 @@ import os
 set_all_seed(42)
 
 # RESISC45 Dataset path
-dataset_path = "/content/drive/MyDrive/Colab Notebooks/RESISC45 Data"
+dataset_path = "assets/RESISC45 Data"
 
 # dictionary with the RESISC45 label names
 target_to_classname = {}
-# go through the path and fill the dictionary with the folder name for each images
-# example: airplane/airplane_01.jpeg will be { 0: "airplane" }
-for root, _, folders in os.walk(dataset_path):
-    if (root.split("/")[-1] == "RESISC45 Data"):
-        continue
-    current_folder = root.split("/")[-1]
-    for folder in folders:
-      # remove everything after the last underscore from folder
-      target_to_classname[len(target_to_classname)] = current_folder
-# print(list(target_to_classname.items())[400:])
 
-# with open(os.path.join(os.getcwd(), "assets/imagenet1000_clsidx_to_labels.txt")) as f:
-#     target_to_classname = eval(f.read())
+with open(os.path.join(os.getcwd(), "assets/resisc45_class_to_labels.txt")) as f:
+    target_to_classname = eval(f.read())
 
 # print(list(target_to_classname.items())[:10])
 
@@ -76,15 +66,6 @@ The set of patches within the related information is saved in a tuple that conta
 2. **targets**: tensor with shape $(10,)$ containing the target class of each patch;
 3. **info**: a dictionary containing the input shape of the images that has been used to optimize the patches, the type of the patch, which in this case is sqared, the size of the patch measured in number of pixels (considering the length of the square's size) and a dictionary that map the target label to the corresponding class name.
 """
-
-_imagenette_classes = [0, 217, 482, 491, 497]
-
-def target_transforms(y):
-  # Assuming your dataset has target values in the range 0-999
-  if y < len(_imagenette_classes):
-    return _imagenette_classes[y]
-  else:
-    return y  # Return the original target if it's outside the range of _imagenette_classes
 
 # Load the patches
 with gzip.open(os.path.join(os.getcwd(), "assets/imagenet_patch.gz"), 'rb') as f:
