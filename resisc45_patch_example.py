@@ -72,8 +72,8 @@ with gzip.open(os.path.join(os.getcwd(), "assets/imagenet_patch.gz"), 'rb') as f
     imagenet_patch = pickle.load(f)
 patches, targets, info = imagenet_patch
 
-from utils.visualization import show_imagenet_patch
-show_imagenet_patch(patches, targets)
+# from utils.visualization import show_imagenet_patch
+# show_imagenet_patch(patches, targets)
 
 """A single patch can be selected indexing the obtained tensor through its ID, with the following mapping:
 
