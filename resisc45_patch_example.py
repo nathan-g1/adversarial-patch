@@ -144,6 +144,7 @@ Now you can collect the predictions assigned by the classifier to the perturbed 
 
 # Load model
 model = models.alexnet(pretrained=True)
+model = model.to(device)
 model.eval()
 
 # Feed the model with the clean images
