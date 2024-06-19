@@ -154,10 +154,10 @@ clean_predictions = torch.argmax(output_clean, dim=1).cpu().detach().numpy()
 output_adv = model(x_adv)
 adv_predictions = torch.argmax(output_adv, dim=1).cpu().detach().numpy()
 
-from utils.visualization import plot_patch_predictions
-plot_patch_predictions(x_clean, x_adv, clean_predictions, adv_predictions,
-                       true_label=y.cpu().detach().numpy(), target=int(target.item()),
-                       figsize=(30, 6), normalizer=normalizer)
+# from utils.visualization import plot_patch_predictions
+# plot_patch_predictions(x_clean, x_adv, clean_predictions, adv_predictions,
+#                        true_label=y.cpu().detach().numpy(), target=int(target.item()),
+#                        figsize=(30, 6), normalizer=normalizer)
 
 """## **Measuring a Model's Performance against Imagenet-Patch**
 
