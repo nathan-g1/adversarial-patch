@@ -47,7 +47,7 @@ import os
 set_all_seed(42)
 
 # RESISC45 Dataset path
-dataset_path = "assets/RESISC45 Data"
+dataset_path = "assets/data"
 
 # dictionary with the RESISC45 label names
 target_to_classname = {}
